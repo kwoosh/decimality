@@ -1,0 +1,14 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": ["edge 16"]
+                }
+            }
+        ]
+    ],
+
+    "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+}
