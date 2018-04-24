@@ -1,11 +1,11 @@
 {
-  "name": "decimalypse",
+  "name": "decimality",
   "version": "0.0.1",
-  "description": "decimalypse",
+  "description": "decimality",
   "main": "./dist/index.js",
   "author": "kwoosh <tobirawork@gmail.com>",
-  "repository": "https://github.com/kwoosh/decimalypse.git",
-  "keywords": ["decimal"],
+  "repository": "https://github.com/kwoosh/decimality.git",
+  "keywords": ["decimal", "denary", "money"],
   "license": "MIT",
   "scripts": {
     "build": "babel ./src --out-dir ./dist",
