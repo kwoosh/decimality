@@ -1,0 +1,7 @@
+src/
+test/
+trash/
+.babelrc
+.eslintrc
+.gitignore
+.prettier.config.js
