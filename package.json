@@ -5,20 +5,21 @@
   "main": "./dist/index.js",
   "author": "kwoosh <tobirawork@gmail.com>",
   "repository": "https://github.com/kwoosh/decimalypse.git",
-  "keywords": [
-    "decimal"
-  ],
+  "keywords": ["decimal"],
   "license": "MIT",
   "scripts": {
     "build": "babel ./src --out-dir ./dist",
+    "clean": "rimraf ./dist",
     "test": "jest",
-    "test:watch": "jest --watch ./test/unit/*"
+    "test:watch": "jest --watch ./test/unit/*",
+    "prepublish": "npm test && npm run clean && npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.44",
     "@babel/core": "^7.0.0-beta.44",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",
+    "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
@@ -27,6 +28,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
-    "jest": "^22.4.3"
+    "jest": "^22.0.6",
+    "rimraf": "^2.6.2"
   }
 }
