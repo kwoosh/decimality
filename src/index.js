@@ -2,7 +2,10 @@ import { decimalify, add, subtract, divide, multiply } from './utils'
 import Decimal from './decimal'
 
 export default {
-    d: (...arg) => new Decimal(...arg),
+    /**
+     * Alias for ***new Decimal()***
+     */
+    d: (...args) => new Decimal(...args),
     Decimal,
     add,
     divide,
