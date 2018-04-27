@@ -12,11 +12,13 @@ class Decimal {
 
     calculate(numeric, method) {
         numeric = numeric instanceof Decimal ? numeric.value : numeric
+
         const values = [this.value, numeric]
+        const result = arithmetic[method](...values)
 
-        this.value = arithmetic[method](...values)
+        updateHistory({ method, values, result }, this)
 
-        updateHistory({ method, values, result: this.value }, this)
+        this.value = result
 
         return this
     }
