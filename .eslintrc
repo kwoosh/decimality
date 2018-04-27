@@ -11,6 +11,7 @@
     "rules": {
         "indent": ["error", 4, { "SwitchCase": 1 }],
         "comma-dangle": 0,
-        "space-before-function-paren": ["error", "never"]
+        "space-before-function-paren": ["error", "never"],
+        "curly": "off"
     }
 }
