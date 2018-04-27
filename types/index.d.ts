@@ -9,6 +9,7 @@ export function divide(left: number, right: number): number
 export function multiple(left: number, right: number): number
 export function d(args: any[]): Decimal
 
+export type Mode = string | 'default' | 'history'
 export type HistoryPoint = {
     date: Date
     values: number[]
@@ -16,16 +17,18 @@ export type HistoryPoint = {
     result: number
 }
 
-export interface Decimal {
+export declare class Decimal {
+    constructor(value: number | string | 0, mode?: Mode)
+
     readonly history: HistoryPoint[]
 
-    value: number | string | 0
-    mode: string | 'default'
+    value: number
+    mode: Mode
 
-    calculate(numeric: number, method: string): Decimal
-    add(num: number, right: number): Decimal
-    sub(left: number, right: number): Decimal
-    mul(left: number, right: number): Decimal
-    div(left: number, right: number): Decimal
     s(): string
+    add(numeric: number): Decimal
+    sub(numeric: number): Decimal
+    mul(numeric: number): Decimal
+    div(numeric: number): Decimal
+    calculate(numeric: number, method: string): Decimal
 }
