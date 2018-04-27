@@ -3,11 +3,19 @@
   "version": "0.0.1",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
-  "files": ["src", "lib", "types/*.d.ts"],
+  "files": [
+    "src",
+    "lib",
+    "types/*.d.ts"
+  ],
   "description": "decimality",
   "author": "kwoosh <tobirawork@gmail.com>",
   "repository": "https://github.com/kwoosh/decimality.git",
-  "keywords": ["decimal", "denary", "money"],
+  "keywords": [
+    "decimal",
+    "denary",
+    "money"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "mkdirp ./lib && babel src --out-file ./lib/index.js",
@@ -31,6 +39,7 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
+    "is-number": "^6.0.0",
     "jest": "^22.0.6",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
