@@ -1,15 +1,17 @@
 {
   "name": "decimality",
   "version": "0.0.1",
+  "main": "lib/index.js",
+  "typings": "types/index.d.ts",
+  "files": ["src", "lib", "types/*.d.ts"],
   "description": "decimality",
-  "main": "dist/index.js",
   "author": "kwoosh <tobirawork@gmail.com>",
   "repository": "https://github.com/kwoosh/decimality.git",
   "keywords": ["decimal", "denary", "money"],
   "license": "MIT",
   "scripts": {
-    "build": "babel ./src --out-dir ./dist",
-    "clean": "rimraf ./dist",
+    "build": "mkdirp ./lib && babel src --out-file ./lib/index.js",
+    "clean": "rimraf ./lib",
     "test": "jest",
     "test:watch": "jest --watch ./test/unit/*",
     "prepublish": "npm test && npm run clean && npm run build"
@@ -21,6 +23,7 @@
     "@babel/preset-env": "^7.0.0-beta.44",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.3",
+    "babel-preset-minify": "^0.4.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -29,6 +32,7 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.0.6",
+    "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
     "uglify-js": "^3.3.22"
   }
