@@ -1,4 +1,4 @@
-import { decimalify, add, subtract, divide, multiply } from './utils'
+import { decimalify, add, subtract, divide, multiply } from './arithmetic'
 import Decimal from './decimal'
 
 export default {
