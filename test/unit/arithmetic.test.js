@@ -1,7 +1,7 @@
-import { decimalify, add, subtract, divide, multiply } from '../../src/utils'
+import { decimalify, add, subtract, divide, multiply } from '../../src/arithmetic'
 import { values, operations } from './data'
 
-describe('Util methods', () => {
+describe('Arithmetic methods', () => {
     test('decimalify', () => {
         values.forEach(v => {
             const entry = String(decimalify(v.num).toFixed(2))
