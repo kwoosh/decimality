@@ -7,7 +7,7 @@ export function add(left: number, right: number): number
 export function subtract(left: number, right: number): number
 export function divide(left: number, right: number): number
 export function multiple(left: number, right: number): number
-export function d(args: any[]): Decimal
+export function d(...args: any[]): Decimal
 
 export type Mode = string | 'default' | 'history'
 export type HistoryPoint = {
@@ -18,17 +18,17 @@ export type HistoryPoint = {
 }
 
 export declare class Decimal {
-    constructor(value: number | string | 0, mode?: Mode)
+    constructor(value?: number | string, mode?: Mode)
 
     readonly history: HistoryPoint[]
 
     value: number
     mode: Mode
 
-    s(): string
-    add(numeric: number): Decimal
-    sub(numeric: number): Decimal
-    mul(numeric: number): Decimal
-    div(numeric: number): Decimal
-    calculate(numeric: number, method: string): Decimal
+    get s(): string
+    add(n: number): Decimal
+    sub(n: number): Decimal
+    mul(n: number): Decimal
+    div(n: number): Decimal
+    calculate(n: number, method: string): Decimal
 }
