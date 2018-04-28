@@ -21,11 +21,11 @@ export declare class Decimal {
     constructor(value?: number | string, mode?: Mode)
 
     readonly history: HistoryPoint[]
+    readonly s: string
 
     value: number
     mode: Mode
 
-    get s(): string
     add(n: number): Decimal
     sub(n: number): Decimal
     mul(n: number): Decimal
