@@ -1,5 +1,5 @@
 import Decimal from '../../src/decimal'
-import isNumber from 'is-number'
+import { isNumber } from '../../src/utils'
 
 describe('Desimal class', () => {
     test('History mode', () => {
@@ -21,9 +21,16 @@ describe('Desimal class', () => {
         })
     })
 
-    test('Method Decimal.s() must return a number-like string', () => {
+    test('Method Decimal.s must return a number-like string', () => {
         const d = new Decimal(10.239)
 
-        expect(isNumber(d.s())).toBeTruthy()
+        expect(isNumber(d.s)).toBeTruthy()
+    })
+
+    test("Throw error if passed value isn't valid", () => {
+        expect(() => {
+            const dec = new Decimal('sdfa')
+            dec.add(12)
+        }).toThrow()
     })
 })

@@ -1,4 +1,7 @@
 export const values = [
+    { num: NaN, str: 'NaN' },
+    { num: Infinity, str: 'Infinity' },
+    { num: -Infinity, str: '-Infinity' },
     { num: 0, str: '0.00' },
     { num: 1, str: '1.00' },
     { num: 10, str: '10.00' },
