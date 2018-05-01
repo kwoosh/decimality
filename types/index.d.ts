@@ -1,7 +1,3 @@
-// Type definitions for decimality 0.0.1
-// Project: decimality
-// Definitions by: kwoosh <tobirawork@gmail.com>
-
 export function decimalify(value: number): number
 export function add(left: number, right: number): number
 export function subtract(left: number, right: number): number
@@ -10,6 +6,7 @@ export function multiple(left: number, right: number): number
 export function d(...args: any[]): Decimal
 
 export type Mode = string | 'default' | 'history'
+
 export type HistoryPoint = {
     date: Date
     values: number[]
@@ -30,5 +27,5 @@ export declare class Decimal {
     sub(n: number): Decimal
     mul(n: number): Decimal
     div(n: number): Decimal
-    calculate(n: number, method: string): Decimal
+    calc(n: number, method: string): Decimal
 }
