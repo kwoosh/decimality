@@ -1,48 +1,48 @@
 import * as arithmetic from './arithmetic'
-import { updateHistory, decimal2number, checkIsValid } from './utils'
 
 class Decimal {
     constructor(value = 0, mode = 'default') {
-        checkIsValid(value)
-
         this.value = arithmetic.decimalify(Number(value))
         this.mode = mode
         this.history = []
 
-        updateHistory({ method: 'init', values: [] }, this)
+        this.updateHistory({ method: 'initial', values: [], result: this.value })
     }
 
-    calculate(n, method) {
-        checkIsValid(n)
-
-        const values = [this.value, decimal2number(Number(n))]
+    calc(n, method) {
+        const operand = n instanceof Decimal ? n.value : n
+        const values = [this.value, operand]
         const result = arithmetic[method](...values)
 
-        updateHistory({ method, values, result }, this)
+        this.updateHistory({ method, values, result })
 
         this.value = result
 
         return this
     }
 
-    add(n) {
-        return this.calculate(n, 'add')
-    }
-
-    sub(n) {
-        return this.calculate(n, 'subtract')
-    }
-
-    div(n) {
-        return this.calculate(n, 'divide')
-    }
-
-    mul(n) {
-        return this.calculate(n, 'multiply')
+    updateHistory(opts) {
+        if (this.mode === 'history') this.history.push({ date: new Date(Date.now()), ...opts })
     }
 
     get s() {
         return String(this.value.toFixed(2))
+    }
+
+    add(n) {
+        return this.calc(n, 'add')
+    }
+
+    sub(n) {
+        return this.calc(n, 'subtract')
+    }
+
+    div(n) {
+        return this.calc(n, 'divide')
+    }
+
+    mul(n) {
+        return this.calc(n, 'multiply')
     }
 }
 
