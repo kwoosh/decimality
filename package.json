@@ -8,7 +8,7 @@
     "lib",
     "types/*.d.ts"
   ],
-  "description": "decimality",
+  "description": "Less than 3 KB size library for decimal arithmetic",
   "author": "kwoosh <tobirawork@gmail.com>",
   "repository": "https://github.com/kwoosh/decimality.git",
   "keywords": [

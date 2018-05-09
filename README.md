@@ -5,7 +5,7 @@ Less than 3 KB size library for decimal arithmetic.
 ## Road Map
 
 *   [Decimalify](#decimalify)
-*   [Decimal as a Type](#decimal-as-a-Type)
+*   [Decimal as a Type](#decimal-as-a-type)
 *   [Decimal Arithmetic](#decimal-arithmetic)
 
 ### Decimalify
@@ -66,11 +66,12 @@ divide(4, 6) // 0.67
 
 ### Decimal as a type
 
+You can work with decimals as with special type `Decimal`
+
 ```js
 import { Decimal } from 'decimality'
 
 const decimal = new Decimal(5.982173)
-
 decimal.value // 5.98
 ```
 
