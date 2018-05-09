@@ -5,6 +5,8 @@ describe('Desimal class', () => {
     test('History mode', () => {
         const d = new Decimal(10.23, 'history')
 
+        expect(d.history).toHaveLength(1)
+
         d.add(12)
         d.add(0.22)
         d.add(213.3342234)
@@ -24,9 +26,9 @@ describe('Desimal class', () => {
     test('Method Decimal.s must return a number-like string', () => {
         values.forEach(value => {
             const d = new Decimal(value.num)
-            expect(d.s).toBe(value.str)
-            expect(typeof d.s).toBe('string')
-            // console.log(d.s)
+
+            expect(d.s()).toBe(value.str)
+            expect(typeof d.s()).toBe('string')
         })
     })
 })
