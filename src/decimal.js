@@ -1,9 +1,9 @@
 import * as arithmetic from './arithmetic'
 
 class Decimal {
-    constructor(value = 0, mode = 'default') {
+    constructor(value = 0, historyMode = false) {
         this.value = arithmetic.decimalify(Number(value))
-        this.mode = mode
+        this.historyMode = historyMode
         this.history = []
 
         this.updateHistory({ method: 'initial', values: [], result: this.value })
@@ -14,7 +14,7 @@ class Decimal {
         const values = [this.value, operand]
         const result = arithmetic[method](...values)
 
-        if (this.mode === 'history') this.updateHistory({ method, values, result })
+        if (this.historyMode) this.updateHistory({ method, values, result })
 
         this.value = result
 

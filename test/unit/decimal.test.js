@@ -3,7 +3,7 @@ import { values } from './data'
 
 describe('Desimal class', () => {
     test('History mode', () => {
-        const d = new Decimal(10.23, 'history')
+        const d = new Decimal(10.23, true)
 
         expect(d.history).toHaveLength(1)
 
@@ -12,6 +12,8 @@ describe('Desimal class', () => {
         d.add(213.3342234)
 
         expect(d.history).toHaveLength(4)
+
+        console.log(d.history)
     })
 
     test('Arithmetic methos', () => {

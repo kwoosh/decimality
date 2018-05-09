@@ -8,7 +8,7 @@ declare namespace decimality {
 
     function d(...args: any[]): Decimal
 
-    type Mode = string | 'default' | 'history'
+    type HistoryMode = boolean
 
     interface HistoryPoint {
         date: Date
@@ -18,12 +18,12 @@ declare namespace decimality {
     }
 
     class Decimal {
-        constructor(value?: number | string, mode?: Mode)
+        constructor(value?: number | string, mode?: HistoryMode)
 
         readonly history: HistoryPoint[]
 
         value: number
-        mode: Mode
+        historyMode: HistoryMode
 
         calc(n: number, method: string): Decimal
 
