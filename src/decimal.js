@@ -10,11 +10,11 @@ class Decimal {
     }
 
     calc(n, method) {
-        const operand = n instanceof Decimal ? n.value : n
+        const operand = n instanceof Decimal ? n.value : Number(n)
         const values = [this.value, operand]
         const result = arithmetic[method](...values)
 
-        this.updateHistory({ method, values, result })
+        if (this.mode === 'history') this.updateHistory({ method, values, result })
 
         this.value = result
 
@@ -22,28 +22,15 @@ class Decimal {
     }
 
     updateHistory(opts) {
-        if (this.mode === 'history') this.history.push({ date: new Date(Date.now()), ...opts })
+        this.history.push({ date: new Date(Date.now()), ...opts })
     }
 
-    get s() {
-        return String(this.value.toFixed(2))
-    }
+    add = n => this.calc(n, 'add')
+    sub = n => this.calc(n, 'subtract')
+    div = n => this.calc(n, 'divide')
+    mul = n => this.calc(n, 'multiply')
 
-    add(n) {
-        return this.calc(n, 'add')
-    }
-
-    sub(n) {
-        return this.calc(n, 'subtract')
-    }
-
-    div(n) {
-        return this.calc(n, 'divide')
-    }
-
-    mul(n) {
-        return this.calc(n, 'multiply')
-    }
+    s = () => String(this.value.toFixed(2))
 }
 
 export default Decimal
